@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Pranay Oswal - Chartered Accountant & Company Secretary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a5f;
+            --secondary-color: #2563eb;
+            --accent-color: #10b981;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8fafc 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-card {
+            background: var(--white);
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .greeting {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--white);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title span {
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about-items {
+            display: grid;
+            gap: 20px;
+        }
+
+        .about-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light-bg);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .about-item-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .about-item-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .about-item-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Expertise Section */
+        .expertise-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .expertise-table thead {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .expertise-table th {
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .expertise-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .expertise-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .expertise-table tbody tr:hover {
+            background: var(--light-bg);
+        }
+
+        .expertise-table td:first-child {
+            font-weight: 600;
+            color: var(--secondary-color);
+            min-width: 120px;
+        }
+
+        /* What I Do Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);
+            border-left-color: var(--secondary-color);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .service-card-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--secondary-color);
+            padding: 15px 35px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .profile-card {
+                padding: 40px 20px;
+            }
+
+            .greeting {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-table th,
+            .expertise-table td {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .cta-section {
+                padding: 35px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="profile-card">
+                <div class="greeting">Hi, I'm CA Pranay Oswal 👋</div>
+                <div class="subtitle">Chartered Accountant & Company Secretary</div>
+                <p class="tagline">A Chartered Accountant (CA) and Company Secretary (CS) with a passion for helping businesses stay compliant, financially sound, and strategically positioned for growth.</p>
+            </div>
+        </header>
+
+        <!-- About Me Section -->
+        <section>
+            <div class="section-title">
+                <span>🧾</span>
+                About Me
+            </div>
+            <div class="about-items">
+                <div class="about-item">
+                    <div class="about-item-icon">🎓</div>
+                    <div class="about-item-content">
+                        <h4>Qualified Professional</h4>
+                        <p>Chartered Accountant & Company Secretary with extensive expertise</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">💼</div>
+                    <div class="about-item-content">
+                        <h4>Strategic Focus</h4>
+                        <p>Working at the intersection of finance, law, and business strategy</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">🌱</div>
+                    <div class="about-item-content">
+                        <h4>Quality Driven</h4>
+                        <p>Committed to delivering accurate, timely, and practical solutions</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">📍</div>
+                    <div class="about-item-content">
+                        <h4>Location</h4>
+                        <p>Based in India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section>
+            <div class="section-title">
+                <span>🛠️</span>
+                Areas of Expertise
+            </div>
+            <table class="expertise-table">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📊 Accounting</td>
+                        <td>Financial reporting, bookkeeping, auditing, and MIS</td>
+                    </tr>
+                    <tr>
+                        <td>🧾 Tax Compliance</td>
+                        <td>Income Tax, GST filing, tax planning & advisory</td>
+                    </tr>
+                    <tr>
+                        <td>🏢 Business Consulting</td>
+                        <td>Company incorporation, ROC compliance, secretarial services</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- What I Do Section -->
+        <section>
+            <div class="section-title">
+                <span>📌</span>
+                What I Do
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-title">📋 Financial Statements</div>
+                    <div class="service-card-description">Preparation and review of financial statements with precision and compliance</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">💰 Tax Planning</div>
+                    <div class="service-card-description">Tax planning and filing for individuals, firms, and companies</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">🛒 GST Compliance</div>
+                    <div class="service-card-description">Registration, returns, and reconciliations</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">📝 Secretarial Services</div>
+                    <div class="service-card-description">Board meetings, annual filings, and ROC matters</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">🏛️ Business Structuring</div>
+                    <div class="service-card-description">Advisory on business structuring and regulatory requirements</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">⚖️ Compliance</div>
+                    <div class="service-card-description">Ensuring adherence to all legal and regulatory standards</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Let's Connect</h2>
+            <p>Feel free to reach out for any finance, tax, or compliance-related queries</p>
+            <a href="mailto:contact@capranay.com" class="cta-button">Get in Touch</a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 CA Pranay Oswal. All rights reserved.</p>
+            <p>Chartered Accountant | Company Secretary | Financial Consultant</p>
+        </footer>
+    </div>
+</body>
+</html>

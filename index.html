@@ -1,474 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Pranay Oswal - Chartered Accountant & Company Secretary</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CA Pranay Oswal — Chartered Accountant & Company Secretary. Accounting, tax, GST and cross-border incorporation advisory for founders and businesses.">
+<title>CA Pranay Oswal — Chartered Accountant & Company Secretary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16232C;
+    --paper:#F6F1E7;
+    --paper-2:#EFE7D8;
+    --brass:#9C6B30;
+    --brass-light:#B98B4E;
+    --rule:#D9CFBC;
+    --slate:#52606D;
+    --white:#FFFDF9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'IBM Plex Sans', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 37px,
+        var(--rule) 37px,
+        var(--rule) 38px
+      );
+    line-height:1.65;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
 
-        :root {
-            --primary-color: #1e3a5f;
-            --secondary-color: #2563eb;
-            --accent-color: #10b981;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --border-color: #e5e7eb;
-        }
+  a{color:var(--brass);}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #f5f7fa 0%, #f8fafc 100%);
-            min-height: 100vh;
-        }
+  /* ---------- Seal / signature element ---------- */
+  .seal{
+    --size:118px;
+    width:var(--size);height:var(--size);
+    border-radius:50%;
+    border:2px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    flex-shrink:0;
+    transform:rotate(-8deg);
+  }
+  .seal::before{
+    content:'';
+    position:absolute;
+    inset:8px;
+    border:1px dashed var(--brass);
+    border-radius:50%;
+    opacity:.6;
+  }
+  .seal-text{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.56rem;
+    letter-spacing:.14em;
+    text-align:center;
+    color:var(--brass);
+    line-height:1.35;
+    text-transform:uppercase;
+    padding:0 12px;
+  }
+  .seal-mini{
+    --size:52px;
+    transform:rotate(6deg);
+  }
+  .seal-mini .seal-text{font-size:.42rem;padding:0 6px;}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+  /* ---------- Header / Hero ---------- */
+  header{padding:70px 0 50px;}
+  .hero{
+    display:flex;
+    align-items:center;
+    gap:44px;
+  }
+  .hero-photo{
+    width:190px;
+    flex-shrink:0;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 10px 26px rgba(22,35,44,.18);
+    border:6px solid var(--white);
+  }
+  .hero-photo img{width:100%;display:block;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:2.7rem;
+    line-height:1.08;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .role{
+    font-size:1.06rem;
+    color:var(--slate);
+    margin-bottom:16px;
+  }
+  .tagline{
+    font-style:italic;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.18rem;
+    color:var(--ink);
+    max-width:520px;
+    line-height:1.5;
+  }
 
-        /* Header Section */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: slideDown 0.8s ease-out;
-        }
+  /* ---------- Ledger stats ---------- */
+  .ledger{
+    background:var(--white);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:0 6px 20px rgba(22,35,44,.06);
+    margin:10px 0 56px;
+    overflow:hidden;
+  }
+  .ledger-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:16px 26px 12px;
+    border-bottom:1px solid var(--rule);
+  }
+  .ledger-head span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+  .ledger-rows{display:flex;flex-wrap:wrap;}
+  .entry{
+    flex:1 1 20%;
+    padding:22px 20px;
+    border-right:1px solid var(--rule);
+    border-top:1px solid var(--rule);
+  }
+  .entry:nth-child(-n+5){border-top:none;}
+  .entry:last-child{border-right:none;}
+  .entry-no{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:var(--brass);
+    letter-spacing:.08em;
+  }
+  .entry-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:1.9rem;
+    color:var(--ink);
+    margin:6px 0 4px;
+  }
+  .entry-label{
+    font-size:.82rem;
+    color:var(--slate);
+  }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  /* ---------- Sections ---------- */
+  section{margin-bottom:58px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:26px;
+  }
+  .section-no{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--brass);
+    font-size:.85rem;
+  }
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.55rem;
+    color:var(--ink);
+  }
+  .rule-line{
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
 
-        .profile-card {
-            background: var(--white);
-            padding: 60px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-            border-top: 4px solid var(--secondary-color);
-        }
+  /* About narrative */
+  .about-text{
+    font-size:1.02rem;
+    color:var(--slate);
+    max-width:680px;
+  }
+  .about-text p{margin-bottom:16px;}
+  .about-text strong{color:var(--ink);}
 
-        .greeting {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
+  /* Expertise table */
+  table{width:100%;border-collapse:collapse;background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 6px 20px rgba(22,35,44,.06);}
+  thead tr{background:var(--ink);}
+  th{
+    color:var(--paper);
+    text-align:left;
+    padding:16px 22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  td{padding:18px 22px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  td:first-child{font-weight:600;color:var(--brass);white-space:nowrap;}
+  td:last-child{color:var(--slate);}
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
+  /* Services / case files */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .case{
+    background:var(--white);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:26px;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .case:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(22,35,44,.1);}
+  .case-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:block;
+    margin-bottom:10px;
+  }
+  .case h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.1rem;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+  .case p{font-size:.92rem;color:var(--slate);}
 
-        .tagline {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
+  /* Testimonials */
+  .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .quote{
+    background:var(--white);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:28px;
+    position:relative;
+  }
+  .quote-mark{
+    font-family:'Fraunces', serif;
+    font-size:2.6rem;
+    color:var(--paper-2);
+    position:absolute;
+    top:10px;
+    right:20px;
+    line-height:1;
+  }
+  .quote p{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.02rem;
+    color:var(--ink);
+    margin-bottom:18px;
+    position:relative;
+    z-index:1;
+  }
+  .quote-foot{display:flex;align-items:center;gap:12px;}
+  .quote-who{font-size:.85rem;color:var(--slate);}
+  .quote-who strong{display:block;color:var(--ink);font-size:.92rem;}
 
-        /* Section Styling */
-        section {
-            background: var(--white);
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-            animation: fadeIn 0.8s ease-out;
-        }
+  /* CTA */
+  .cta{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:10px;
+    padding:52px 44px;
+    text-align:center;
+  }
+  .cta h2{color:var(--paper);font-size:1.7rem;margin-bottom:14px;}
+  .cta p{color:#C9CFD3;margin-bottom:28px;font-size:1rem;}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:500;
+    font-size:.95rem;
+    transition:all .25s ease;
+  }
+  .btn-primary{background:var(--brass);color:var(--white);}
+  .btn-primary:hover{background:var(--brass-light);}
+  .btn-secondary{border:1px solid #4A5B66;color:var(--paper);}
+  .btn-secondary:hover{border-color:var(--brass);color:var(--brass-light);}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  footer{
+    text-align:center;
+    padding:40px 0 60px;
+    color:var(--slate);
+    font-size:.82rem;
+  }
+  footer .seal{margin:0 auto 18px;}
 
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 15px;
-        }
+  @media (prefers-reduced-motion: no-preference){
+    header, section{animation:rise .7s ease-out both;}
+    @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  }
 
-        .section-title span {
-            font-size: 1.5rem;
-        }
-
-        /* About Section */
-        .about-items {
-            display: grid;
-            gap: 20px;
-        }
-
-        .about-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px;
-            background: var(--light-bg);
-            border-left: 4px solid var(--secondary-color);
-            border-radius: 6px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .about-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-        }
-
-        .about-item-icon {
-            font-size: 1.5rem;
-            min-width: 30px;
-        }
-
-        .about-item-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .about-item-content p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Expertise Section */
-        .expertise-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .expertise-table thead {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .expertise-table th {
-            padding: 18px 20px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .expertise-table td {
-            padding: 18px 20px;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
-        }
-
-        .expertise-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .expertise-table tbody tr:hover {
-            background: var(--light-bg);
-        }
-
-        .expertise-table td:first-child {
-            font-weight: 600;
-            color: var(--secondary-color);
-            min-width: 120px;
-        }
-
-        /* What I Do Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--light-bg);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);
-            border-left-color: var(--secondary-color);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: rgba(37, 99, 235, 0.05);
-            border-radius: 50%;
-            transform: translate(30px, -30px);
-        }
-
-        .service-card-title {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card-description {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 50px 40px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
-
-        .cta-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--white);
-            color: var(--secondary-color);
-            padding: 15px 35px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--white);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 15px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            .profile-card {
-                padding: 40px 20px;
-            }
-
-            .greeting {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 25px;
-            }
-
-            .section-title {
-                font-size: 1.4rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-table th,
-            .expertise-table td {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
-
-            .cta-section {
-                padding: 35px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+  @media (max-width:760px){
+    .hero{flex-direction:column;text-align:center;}
+    .tagline{max-width:none;}
+    h1{font-size:2.1rem;}
+    .ledger-rows{flex-direction:column;}
+    .entry{border-right:none !important;border-top:1px solid var(--rule) !important;}
+    .entry:first-child{border-top:none !important;}
+    .cases, .testimonials{grid-template-columns:1fr;}
+    .cta{padding:40px 24px;}
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="profile-card">
-                <div class="greeting">Hi, I'm CA Pranay Oswal 👋</div>
-                <div class="subtitle">Chartered Accountant & Company Secretary</div>
-                <p class="tagline">A Chartered Accountant (CA) and Company Secretary (CS) with a passion for helping businesses stay compliant, financially sound, and strategically positioned for growth.</p>
-            </div>
-        </header>
 
-        <!-- About Me Section -->
-        <section>
-            <div class="section-title">
-                <span>🧾</span>
-                About Me
-            </div>
-            <div class="about-items">
-                <div class="about-item">
-                    <div class="about-item-icon">🎓</div>
-                    <div class="about-item-content">
-                        <h4>Qualified Professional</h4>
-                        <p>Chartered Accountant & Company Secretary with extensive expertise</p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-item-icon">💼</div>
-                    <div class="about-item-content">
-                        <h4>Strategic Focus</h4>
-                        <p>Working at the intersection of finance, law, and business strategy</p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-item-icon">🌱</div>
-                    <div class="about-item-content">
-                        <h4>Quality Driven</h4>
-                        <p>Committed to delivering accurate, timely, and practical solutions</p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-item-icon">📍</div>
-                    <div class="about-item-content">
-                        <h4>Location</h4>
-                        <p>Based in India</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="wrap">
 
-        <!-- Expertise Section -->
-        <section>
-            <div class="section-title">
-                <span>🛠️</span>
-                Areas of Expertise
-            </div>
-            <table class="expertise-table">
-                <thead>
-                    <tr>
-                        <th>Domain</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>📊 Accounting</td>
-                        <td>Financial reporting, bookkeeping, auditing, and MIS</td>
-                    </tr>
-                    <tr>
-                        <td>🧾 Tax Compliance</td>
-                        <td>Income Tax, GST filing, tax planning & advisory</td>
-                    </tr>
-                    <tr>
-                        <td>🏢 Business Consulting</td>
-                        <td>Company incorporation, ROC compliance, secretarial services</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- What I Do Section -->
-        <section>
-            <div class="section-title">
-                <span>📌</span>
-                What I Do
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-card-title">📋 Financial Statements</div>
-                    <div class="service-card-description">Preparation and review of financial statements with precision and compliance</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-title">💰 Tax Planning</div>
-                    <div class="service-card-description">Tax planning and filing for individuals, firms, and companies</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-title">🛒 GST Compliance</div>
-                    <div class="service-card-description">Registration, returns, and reconciliations</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-title">📝 Secretarial Services</div>
-                    <div class="service-card-description">Board meetings, annual filings, and ROC matters</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-title">🏛️ Business Structuring</div>
-                    <div class="service-card-description">Advisory on business structuring and regulatory requirements</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-title">⚖️ Compliance</div>
-                    <div class="service-card-description">Ensuring adherence to all legal and regulatory standards</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Let's Connect</h2>
-            <p>Feel free to reach out for any finance, tax, or compliance-related queries</p>
-            <a href="mailto:capranayoswal@gmail.com" class="cta-button">Get in Touch</a>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2017 CA Pranay Oswal. All rights reserved.</p>
-            <p>Chartered Accountant | Company Secretary | Financial Consultant</p>
-        </footer>
+  <header>
+    <div class="hero">
+      <div class="hero-photo">
+        <img src="profile-photo.jpg" alt="CA Pranay Oswal">
+      </div>
+      <div>
+        <div class="eyebrow">Register No. — Finance &amp; Compliance Practice</div>
+        <h1>CA Pranay Oswal</h1>
+        <div class="role">Chartered Accountant &amp; Company Secretary</div>
+        <p class="tagline">Helping founders and businesses stay compliant, financially sound, and ready to scale — across borders.</p>
+      </div>
     </div>
+  </header>
+
+  <div class="ledger">
+    <div class="ledger-head">
+      <span>Practice Register</span>
+      <span>Updated 2026</span>
+    </div>
+    <div class="ledger-rows">
+      <div class="entry">
+        <div class="entry-no">No. 01</div>
+        <div class="entry-num">9+</div>
+        <div class="entry-label">Years post-qualification</div>
+      </div>
+      <div class="entry">
+        <div class="entry-no">No. 02</div>
+        <div class="entry-num">1000+</div>
+        <div class="entry-label">Clients served</div>
+      </div>
+      <div class="entry">
+        <div class="entry-no">No. 03</div>
+        <div class="entry-num">350+</div>
+        <div class="entry-label">Registrations handled</div>
+      </div>
+      <div class="entry">
+        <div class="entry-no">No. 04</div>
+        <div class="entry-num">8000+</div>
+        <div class="entry-label">ITRs filed</div>
+      </div>
+      <div class="entry">
+        <div class="entry-no">No. 05</div>
+        <div class="entry-num">8+</div>
+        <div class="entry-label">Countries served</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-head">
+      <span class="section-no">01</span>
+      <h2>About</h2>
+      <span class="rule-line"></span>
+    </div>
+    <div class="about-text">
+      <p>I'm a <strong>Chartered Accountant and Company Secretary</strong> working at the intersection of finance, law, and business strategy. Over the last <strong>9+ years</strong>, I've built a practice around one idea: compliance shouldn't be a source of stress for the people running a business — it should be handled quietly, correctly, and on time.</p>
+      <p>That practice now spans <strong>1000+ clients across 8+ countries</strong>, from Indian founders incorporating entities abroad to overseas businesses that need dependable accounting and tax support in India. I've filed <strong>8000+ income tax returns</strong> and handled <strong>350+ registrations</strong> — company incorporations, GST, and secretarial filings — for individuals, startups, and established firms alike.</p>
+      <p>Based in India, I work closely with founders who need a finance partner that understands both sides of a cross-border setup — the paperwork, and the deadlines that come with it.</p>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="section-head">
+      <span class="section-no">02</span>
+      <h2>Areas of Expertise</h2>
+      <span class="rule-line"></span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Domain</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Accounting</td><td>Financial reporting, bookkeeping, auditing, and MIS</td></tr>
+        <tr><td>Tax Compliance</td><td>Income tax, GST filing, tax planning &amp; advisory</td></tr>
+        <tr><td>Business Consulting</td><td>Company incorporation, ROC compliance, secretarial services</td></tr>
+        <tr><td>Cross-Border Setup</td><td>Entity incorporation abroad for Indian founders, and India-entry support for foreign businesses</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="work">
+    <div class="section-head">
+      <span class="section-no">03</span>
+      <h2>What I Do</h2>
+      <span class="rule-line"></span>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <span class="case-tag">Financial Statements</span>
+        <h3>Statements you can hand to a bank or an investor</h3>
+        <p>Preparation and review of financial statements, bookkeeping, and MIS reporting — built to hold up under scrutiny.</p>
+      </div>
+      <div class="case">
+        <span class="case-tag">Tax Planning &amp; Filing</span>
+        <h3>Income tax done early, not in a panic</h3>
+        <p>Planning and filing for individuals, firms, and companies, with an eye on what you owe well before the deadline.</p>
+      </div>
+      <div class="case">
+        <span class="case-tag">GST Compliance</span>
+        <h3>Registrations, returns, reconciliations</h3>
+        <p>End-to-end GST compliance so nothing falls through the cracks between filing periods.</p>
+      </div>
+      <div class="case">
+        <span class="case-tag">Secretarial &amp; ROC</span>
+        <h3>Board meetings and annual filings, on time</h3>
+        <p>Secretarial compliance including board meetings, annual filings, and ROC matters handled on schedule.</p>
+      </div>
+      <div class="case">
+        <span class="case-tag">Cross-Border Incorporation</span>
+        <h3>US and international entity setup for Indian founders</h3>
+        <p>Company incorporation abroad, structured correctly from day one — see the client note below.</p>
+      </div>
+      <div class="case">
+        <span class="case-tag">Business Structuring</span>
+        <h3>Advisory on structure and regulatory requirements</h3>
+        <p>Guidance on how to structure a business or transaction before it becomes a compliance problem later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="section-head">
+      <span class="section-no">04</span>
+      <h2>Client Notes</h2>
+      <span class="rule-line"></span>
+    </div>
+    <div class="testimonials">
+      <div class="quote">
+        <span class="quote-mark">&rdquo;</span>
+        <p>It was a pleasure working with CA Pranay on our QuickBooks task. His knowledge, experience, and dedication are exceptional.</p>
+        <div class="quote-foot">
+          <div class="seal seal-mini"><div class="seal-text">Verified Client</div></div>
+          <div class="quote-who"><strong>Clarence</strong>Sunbex Group, Canada</div>
+        </div>
+      </div>
+      <div class="quote">
+        <span class="quote-mark">&rdquo;</span>
+        <p>I got my company registered in the US in less than a week. I'd recommend CA Pranay Oswal to other Indian founders looking to incorporate entities in the US.</p>
+        <div class="quote-foot">
+          <div class="seal seal-mini"><div class="seal-text">Verified Client</div></div>
+          <div class="quote-who"><strong>Amit Dodani</strong>Founder, Valuenaire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Let's Connect</h2>
+    <p>For finance, tax, compliance, or cross-border incorporation queries — reach out directly.</p>
+    <div class="cta-buttons">
+      <a href="mailto:capranayoswal@gmail.com" class="btn btn-primary">Get in Touch</a>
+      <a href="#" class="btn btn-secondary">Connect on LinkedIn</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="seal"><div class="seal-text">CA · CS Est. Practice</div></div>
+    <p>&copy; 2017 CA Pranay Oswal. All rights reserved.</p>
+    <p>Chartered Accountant · Company Secretary · Financial Consultant</p>
+  </footer>
+
+</div>
 </body>
 </html>

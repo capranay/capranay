@@ -24,15 +24,9 @@
   body{
     font-family:'IBM Plex Sans', sans-serif;
     color:var(--ink);
-    background:var(--paper);
-    background-image:
-      repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 37px,
-        var(--rule) 37px,
-        var(--rule) 38px
-      );
+    background:
+      radial-gradient(1100px 520px at 50% -8%, #FFFFFF 0%, var(--paper) 62%),
+      var(--paper);
     line-height:1.65;
   }
   .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
@@ -153,12 +147,6 @@
   }
   .entry:nth-child(-n+5){border-top:none;}
   .entry:last-child{border-right:none;}
-  .entry-no{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:.68rem;
-    color:var(--brass);
-    letter-spacing:.08em;
-  }
   .entry-num{
     font-family:'IBM Plex Mono', monospace;
     font-weight:500;
@@ -178,11 +166,6 @@
     align-items:baseline;
     gap:14px;
     margin-bottom:26px;
-  }
-  .section-no{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--brass);
-    font-size:.85rem;
   }
   h2{
     font-family:'Fraunces', serif;
@@ -342,7 +325,7 @@
         <img src="profile-photo.jpg" alt="CA Pranay Oswal">
       </div>
       <div>
-        <div class="eyebrow">Register No. — Finance &amp; Compliance Practice</div>
+        <div class="eyebrow">Finance &amp; Compliance Practice</div>
         <h1>CA Pranay Oswal</h1>
         <div class="role">Chartered Accountant &amp; Company Secretary</div>
         <p class="tagline">Helping founders and businesses stay compliant, financially sound, and ready to scale — across borders.</p>
@@ -357,27 +340,22 @@
     </div>
     <div class="ledger-rows">
       <div class="entry">
-        <div class="entry-no">No. 01</div>
         <div class="entry-num">9+</div>
         <div class="entry-label">Years post-qualification</div>
       </div>
       <div class="entry">
-        <div class="entry-no">No. 02</div>
         <div class="entry-num">1000+</div>
         <div class="entry-label">Clients served</div>
       </div>
       <div class="entry">
-        <div class="entry-no">No. 03</div>
         <div class="entry-num">350+</div>
         <div class="entry-label">Registrations handled</div>
       </div>
       <div class="entry">
-        <div class="entry-no">No. 04</div>
         <div class="entry-num">8000+</div>
         <div class="entry-label">ITRs filed</div>
       </div>
       <div class="entry">
-        <div class="entry-no">No. 05</div>
         <div class="entry-num">8+</div>
         <div class="entry-label">Countries served</div>
       </div>
@@ -386,7 +364,6 @@
 
   <section id="about">
     <div class="section-head">
-      <span class="section-no">01</span>
       <h2>About</h2>
       <span class="rule-line"></span>
     </div>
@@ -399,7 +376,6 @@
 
   <section id="expertise">
     <div class="section-head">
-      <span class="section-no">02</span>
       <h2>Areas of Expertise</h2>
       <span class="rule-line"></span>
     </div>
@@ -418,7 +394,6 @@
 
   <section id="work">
     <div class="section-head">
-      <span class="section-no">03</span>
       <h2>What I Do</h2>
       <span class="rule-line"></span>
     </div>
@@ -458,7 +433,6 @@
 
   <section id="testimonials">
     <div class="section-head">
-      <span class="section-no">04</span>
       <h2>Client Notes</h2>
       <span class="rule-line"></span>
     </div>
@@ -486,14 +460,14 @@
     <h2>Let's Connect</h2>
     <p>For finance, tax, compliance, or cross-border incorporation queries — reach out directly.</p>
     <div class="cta-buttons">
-      <a href="mailto:capranayoswal@gmail.com" class="btn btn-primary">Get in Touch</a>
+      <a href="mailto:contact@capranay.com" class="btn btn-primary">Get in Touch</a>
       <a href="#" class="btn btn-secondary">Connect on LinkedIn</a>
     </div>
   </div>
 
   <footer>
     <div class="seal"><div class="seal-text">CA · CS Est. Practice</div></div>
-    <p>&copy; 2017 CA Pranay Oswal. All rights reserved.</p>
+    <p>&copy; 2026 CA Pranay Oswal. All rights reserved.</p>
     <p>Chartered Accountant · Company Secretary · Financial Consultant</p>
   </footer>
 

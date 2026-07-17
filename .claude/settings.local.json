@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /workspaces/)",
+      "Read(//workspaces/**)",
+      "Bash(git clone *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(code --version)",
+      "Bash(code /workspaces/Project-4)"
+    ]
+  }
+}
